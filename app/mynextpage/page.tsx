@@ -1,6 +1,9 @@
 export default function MyNextPage() {
   return (
-    <div className="flex justify-center w-full min-h-screen bg-zinc-50 dark:bg-black">
+    <div className="flex justify-center w-full min-h-screen bg-black">
+
+
+      
       <main className="flex flex-col gap-8 w-full max-w-3xl px-16 py-32">
         <h1 className="text-4xl font-semibold tracking-tight text-black dark:text-white">
           About Me
