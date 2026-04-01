@@ -2,19 +2,36 @@
 
 import Image from "next/image";
 import { useRouter } from "next/navigation"
+import { motion } from "framer-motion"
+
+function Button() {
+  return (
+    <motion.button
+      className="px-6 py-3 bg-indigo-600 text-white font-semibold rounded-lg shadow-lg"
+      whileHover={{ scale: 1.1 }}
+      whileTap={{ scale: 0.9 }}
+    >
+      Click Me!
+    </motion.button>
+  );
+}
 
 export default function Home() {
   const router = useRouter();
+    const box = {
+      width: 100,
+      height: 100,
+      backgroundColor: "#ff0088",
+      borderRadius: 5,
+  }
 
   function homeBtnClicked() {
       router.push("/mynextpage");
   }
 
-
-
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
+    <div className="flex flex-col items-center bg-zinc-50 font-sans dark:bg-black">
+      <main className="flex w-full max-w-3xl flex-col items-center gap-8 py-32 px-16 bg-white dark:bg-black sm:items-start">
         <Image
           className="dark:invert"
           src="/next.svg"
@@ -29,6 +46,23 @@ export default function Home() {
           Click me
         </button>
       </div>
+
+       <motion.div
+            style={box}
+            animate={{ rotate: 360 }}
+            transition={{ duration: 1 }}
+            />
+
+
+        <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+            onHoverStart={() => console.log('hover started!')}
+            className="w-16 h-16 bg-blue-500"
+        />
+
+        <Button />
+
 
         <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
           <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
@@ -69,7 +103,7 @@ export default function Home() {
             Deploy Now
           </a>
           <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
+            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/8 px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
             href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
             target="_blank"
             rel="noopener noreferrer"
@@ -77,6 +111,48 @@ export default function Home() {
             Documentation
           </a>
         </div>
+
+                <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+            onHoverStart={() => console.log('hover started!')}
+            className="w-16 h-16 bg-blue-500"
+        />
+
+                <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+            onHoverStart={() => console.log('hover started!')}
+            className="w-16 h-16 bg-blue-500"
+        />
+
+                <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+            onHoverStart={() => console.log('hover started!')}
+            className="w-16 h-16 bg-blue-500"
+        />
+
+                <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+            onHoverStart={() => console.log('hover started!')}
+            className="w-16 h-16 bg-blue-500"
+        />
+
+                <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+            onHoverStart={() => console.log('hover started!')}
+            className="w-16 h-16 bg-blue-500"
+        />
+
+                <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+            onHoverStart={() => console.log('hover started!')}
+            className="w-16 h-16 bg-blue-500"
+        />
       </main>
     </div>
   );
