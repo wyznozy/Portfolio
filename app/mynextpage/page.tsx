@@ -6,23 +6,20 @@ export default function MyNextPage() {
           About Me
         </h1>
         <p className="text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-          Hi, I&apos;m a .NET developer with experience building applications across
-          desktop, mobile, and web. I&apos;m currently expanding my skills into
-          modern frontend development with React and Next.js.
+          Hi, I&apos;m an artist based out of my studio. I create work that explores
+          color, form, and emotion — spanning digital illustration, painting, and mixed media.
         </p>
         <p className="text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-          I enjoy solving complex problems and building clean, maintainable
-          software. When I'm not coding, you can find me exploring new
-          technologies and sharpening my craft.
+          This portfolio is a collection of pieces I&apos;ve created over the years.
+          I&apos;m always working on something new, so check back often.
         </p>
         <div className="flex flex-col gap-2">
-          <h2 className="text-2xl font-semibold text-black dark:text-white">Skills</h2>
+          <h2 className="text-2xl font-semibold text-black dark:text-white">Mediums</h2>
           <ul className="list-disc list-inside text-zinc-600 dark:text-zinc-400 text-lg leading-8">
-            <li>.NET / C#</li>
-            <li>.NET MAUI</li>
-            <li>React / Next.js</li>
-            <li>TypeScript</li>
-            <li>Tailwind CSS</li>
+            <li>Digital Illustration</li>
+            <li>Oil Painting</li>
+            <li>Watercolour</li>
+            <li>Mixed Media</li>
           </ul>
         </div>
       </main>
