@@ -231,7 +231,7 @@ function NavMenu() {
   const [hovered, setHovered] = useState<string | null>(null)
 
   return (
-    <div className="flex flex-col gap-2 w-full" onMouseLeave={() => setHovered(null)}>
+    <div className="hidden sm:flex flex-col gap-2 w-full" onMouseLeave={() => setHovered(null)}>
       {navItems.map((item) => (
         <motion.div
           key={item.label}
@@ -269,23 +269,30 @@ export default function Home() {
       <div className="fixed left-25 top-0 h-screen flex items-center pl-8 z-50">
         <NavMenu />
       </div>
-    <div className="flex flex-col items-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex w-full max-w-3xl flex-col items-center gap-8 py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <ProfileCircle />
 
-        <motion.p
-          className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 3 }}
-        >
-          Welcome to my personal website! :)
-        </motion.p>
+      
+      <div className="flex flex-col min-h-screen items-center bg-zinc-50 font-sans dark:bg-black">
+        <main className="flex w-full max-w-3xl flex-col items-center gap-8 py-32 px-16 bg-white dark:bg-black sm:items-start">
+          <ProfileCircle />
 
-        <ContentSquare />
-      </main>
-    </div>
+          <motion.p
+            className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 3 }}
+          >
+            Welcome to my personal website! :)
+          </motion.p>
+
+          <ContentSquare />
+        </main>
+      </div>
+
+
+      <div className="flex flex-col min-h-screen items-center bg-zinc-50 font-sans dark:bg-blue-950">
+      </div>
+      
     </>
   );
 }
