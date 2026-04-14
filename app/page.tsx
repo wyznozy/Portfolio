@@ -24,205 +24,30 @@ function ProfileCircle() {
   );
 }
 
-
-
 function ContentSquare() {
   return (
     <motion.div
-      className="flex flex-col items-center gap-4"
+      className="flex w-75 mt-auto flex-col items-center gap-4"
       initial={{ y: "100vh", opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ type: "spring", stiffness: 60, damping: 18, restSpeed: 0.5, restDelta: 0.01, delay: 0.1 }}
     >
-      <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-        <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-          To get started, edit the page.tsx file.
-        </h1>
-        <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-          Looking for a starting point or more instructions? Head over to{" "}
-          <a
-            href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            className="font-medium text-zinc-950 dark:text-zinc-50"
-          >
-            Templates
-          </a>{" "}
-          or the{" "}
-          <a
-            href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            className="font-medium text-zinc-950 dark:text-zinc-50"
-          >
-            Learning
-          </a>{" "}
-          center.
-        </p>
+      <div className="flex flex-row w-full items-center justify-between text-center">
+
+        <a className="inline-flex" href="https://www.linkedin.com/in/michaelanhchau/" target="_blank" rel="noopener noreferrer">
+          <Image src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/linkedin.png`} alt="LinkedIn" width={40} height={40} className="object-contain w-12 h-12" />
+        </a>
+
+        <a  className="inline-flex" href="https://github.com/wyznozy" target="_blank" rel="noopener noreferrer">
+          <Image src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/github.png`} alt="GitHub" width={40} height={40} className="object-contain w-12 h-12" />
+        </a>
       </div>
     </motion.div>
   );
 }
 
-// function Content() {
-//   return (
-//     <>
-//       <article
-//         style={{
-//           maxWidth: 500,
-//           padding: "150px 20px",
-//           display: "flex",
-//           flexDirection: "column",
-//           gap: 20,
-//         }}
-//       >
-//         <p>
-//           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-//           Aliquam ac rhoncus quam.
-//         </p>
-//         <p>
-//           Fringilla quam urna. Cras turpis elit, euismod eget ligula
-//           quis, imperdiet sagittis justo. In viverra fermentum ex ac
-//           vestibulum. Aliquam eleifend nunc a luctus porta. Mauris
-//           laoreet augue ut felis blandit, at iaculis odio ultrices.
-//           Nulla facilisi. Vestibulum cursus ipsum tellus, eu tincidunt
-//           neque tincidunt a.
-//         </p>
-//         <h2>Sub-header</h2>
-//         <p>
-//           In eget sodales arcu, consectetur efficitur metus. Duis
-//           efficitur tincidunt odio, sit amet laoreet massa fringilla
-//           eu.
-//         </p>
-//         <p>
-//           Pellentesque id lacus pulvinar elit pulvinar pretium ac non
-//           urna. Mauris id mauris vel arcu commodo venenatis. Aliquam
-//           eu risus arcu. Proin sit amet lacus mollis, semper massa ut,
-//           rutrum mi.
-//         </p>
-//         <p>
-//           Sed sem nisi, luctus consequat ligula in, congue sodales
-//           nisl.
-//         </p>
-//         <p>
-//           Vestibulum bibendum at erat sit amet pulvinar. Pellentesque
-//           pharetra leo vitae tristique rutrum. Donec ut volutpat ante,
-//           ut suscipit leo.
-//         </p>
-//         <h2>Sub-header</h2>
-//         <p>
-//           Maecenas quis elementum nulla, in lacinia nisl. Ut rutrum
-//           fringilla aliquet. Pellentesque auctor vehicula malesuada.
-//           Aliquam id feugiat sem, sit amet tempor nulla. Quisque
-//           fermentum felis faucibus, vehicula metus ac, interdum nibh.
-//           Curabitur vitae convallis ligula. Integer ac enim vel felis
-//           pharetra laoreet. Interdum et malesuada fames ac ante ipsum
-//           primis in faucibus. Pellentesque hendrerit ac augue quis
-//           pretium.
-//         </p>
-//         <p>
-//           Morbi ut scelerisque nibh. Integer auctor, massa non dictum
-//           tristique, elit metus efficitur elit, ac pretium sapien nisl
-//           nec ante. In et ex ultricies, mollis mi in, euismod dolor.
-//         </p>
-//         <p>Quisque convallis ligula non magna efficitur tincidunt.</p>
-//         <p>
-//           Pellentesque id lacus pulvinar elit pulvinar pretium ac non
-//           urna. Mauris id mauris vel arcu commodo venenatis. Aliquam
-//           eu risus arcu. Proin sit amet lacus mollis, semper massa ut,
-//           rutrum mi.
-//         </p>
-//         <p>
-//           Sed sem nisi, luctus consequat ligula in, congue sodales
-//           nisl.
-//         </p>
-//         <p>
-//           Vestibulum bibendum at erat sit amet pulvinar. Pellentesque
-//           pharetra leo vitae tristique rutrum. Donec ut volutpat ante,
-//           ut suscipit leo.
-//         </p>
-//         <h2>Sub-header</h2>
-//         <p>
-//           Maecenas quis elementum nulla, in lacinia nisl. Ut rutrum
-//           fringilla aliquet. Pellentesque auctor vehicula malesuada.
-//           Aliquam id feugiat sem, sit amet tempor nulla. Quisque
-//           fermentum felis faucibus, vehicula metus ac, interdum nibh.
-//           Curabitur vitae convallis ligula. Integer ac enim vel felis
-//           pharetra laoreet. Interdum et malesuada fames ac ante ipsum
-//           primis in faucibus. Pellentesque hendrerit ac augue quis
-//           pretium.
-//         </p>
-//         <p>
-//           Morbi ut scelerisque nibh. Integer auctor, massa non dictum
-//           tristique, elit metus efficitur elit, ac pretium sapien nisl
-//           nec ante. In et ex ultricies, mollis mi in, euismod dolor.
-//         </p>
-//         <p>Quisque convallis ligula non magna efficitur tincidunt.</p>
-//         <p>
-//           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-//           Aliquam ac rhoncus quam.
-//         </p>
-//         <p>
-//           Fringilla quam urna. Cras turpis elit, euismod eget ligula
-//           quis, imperdiet sagittis justo. In viverra fermentum ex ac
-//           vestibulum. Aliquam eleifend nunc a luctus porta. Mauris
-//           laoreet augue ut felis blandit, at iaculis odio ultrices.
-//           Nulla facilisi. Vestibulum cursus ipsum tellus, eu tincidunt
-//           neque tincidunt a.
-//         </p>
-//         <h2>Sub-header</h2>
-//         <p>
-//           In eget sodales arcu, consectetur efficitur metus. Duis
-//           efficitur tincidunt odio, sit amet laoreet massa fringilla
-//           eu.
-//         </p>
-//         <p>
-//           Pellentesque id lacus pulvinar elit pulvinar pretium ac non
-//           urna. Mauris id mauris vel arcu commodo venenatis. Aliquam
-//           eu risus arcu. Proin sit amet lacus mollis, semper massa ut,
-//           rutrum mi.
-//         </p>
-//         <p>
-//           Sed sem nisi, luctus consequat ligula in, congue sodales
-//           nisl.
-//         </p>
-//         <p>
-//           Vestibulum bibendum at erat sit amet pulvinar. Pellentesque
-//           pharetra leo vitae tristique rutrum. Donec ut volutpat ante,
-//           ut suscipit leo.
-//         </p>
-//         <h2>Sub-header</h2>
-//         <p>
-//           Maecenas quis elementum nulla, in lacinia nisl. Ut rutrum
-//           fringilla aliquet. Pellentesque auctor vehicula malesuada.
-//           Aliquam id feugiat sem, sit amet tempor nulla. Quisque
-//           fermentum felis faucibus, vehicula metus ac, interdum nibh.
-//           Curabitur vitae convallis ligula. Integer ac enim vel felis
-//           pharetra laoreet. Interdum et malesuada fames ac ante ipsum
-//           primis in faucibus. Pellentesque hendrerit ac augue quis
-//           pretium.
-//         </p>
-//         <p>
-//           Morbi ut scelerisque nibh. Integer auctor, massa non dictum
-//           tristique, elit metus efficitur elit, ac pretium sapien nisl
-//           nec ante. In et ex ultricies, mollis mi in, euismod dolor.
-//         </p>
-//         <p>Quisque convallis ligula non magna efficitur tincidunt.</p>
-//       </article>
-//     </>
-//   );
-// }
-
-// function Button() {
-//   return (
-//     <motion.button
-//       className="px-6 py-3 bg-indigo-600 text-white font-semibold rounded-lg shadow-lg"
-//       whileHover={{ scale: 1.1 }}
-//       whileTap={{ scale: 0.9 }}
-//     >
-//       Click Me!
-//     </motion.button>
-//   );
-// }
-
 const navItems = [
-  { number: "01", label: "HOME" },
+  { number: "01", label: "ABOUT ME" },
   { number: "02", label: "PHOTOS" },
   { number: "03", label: "CONTACT" },
 ]
@@ -231,7 +56,7 @@ function NavMenu() {
   const [hovered, setHovered] = useState<string | null>(null)
 
   return (
-    <div className="flex flex-col gap-2 w-full" onMouseLeave={() => setHovered(null)}>
+    <div className="hidden sm:flex flex-col gap-2 w-full" onMouseLeave={() => setHovered(null)}>
       {navItems.map((item) => (
         <motion.div
           key={item.label}
@@ -269,23 +94,30 @@ export default function Home() {
       <div className="fixed left-25 top-0 h-screen flex items-center pl-8 z-50">
         <NavMenu />
       </div>
-    <div className="flex flex-col items-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex w-full max-w-3xl flex-col items-center gap-8 py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <ProfileCircle />
 
-        <motion.p
-          className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 3 }}
-        >
-          Welcome to my personal website! :)
-        </motion.p>
+      
+      <div className="flex flex-col items-center bg-zinc-50 font-sans dark:bg-black">
+        <main className="flex w-full min-h-screen mx-auto flex-col items-center gap-8 py-32 px-16 bg-white dark:bg-black ">
+          <ProfileCircle />
 
-        <ContentSquare />
-      </main>
-    </div>
+          <motion.p
+            className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 3 }}
+          >
+            Welcome to my personal website! :)
+          </motion.p>
+
+            <ContentSquare />
+        </main>
+      </div>
+
+
+      <div className="flex flex-col min-h-screen items-center bg-zinc-50 font-sans dark:bg-blue-950">
+      </div>
+      
     </>
   );
 }
