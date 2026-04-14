@@ -4,7 +4,8 @@
       "WebSearch",
       "WebFetch(domain:motion.dev)",
       "Bash(gh run:*)",
-      "WebFetch(domain:github.com)"
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:wyznozy.github.io)"
     ]
   }
 }
