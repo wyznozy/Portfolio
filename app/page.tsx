@@ -29,7 +29,7 @@ function ProfileCircle() {
 function ContentSquare() {
   return (
     <motion.div
-      className="flex flex-col items-center gap-4"
+      className="flex mt-auto flex-col items-center gap-4"
       initial={{ y: "100vh", opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ type: "spring", stiffness: 60, damping: 18, restSpeed: 0.5, restDelta: 0.01, delay: 0.1 }}
@@ -271,8 +271,8 @@ export default function Home() {
       </div>
 
       
-      <div className="flex flex-col min-h-screen items-center bg-zinc-50 font-sans dark:bg-black">
-        <main className="flex w-full max-w-3xl flex-col items-center gap-8 py-32 px-16 bg-white dark:bg-black sm:items-start">
+      <div className="flex flex-col items-center bg-zinc-50 font-sans dark:bg-black">
+        <main className="flex w-full min-h-screen max-w-3xl flex-col items-center gap-8 py-32 px-16 bg-white dark:bg-black sm:items-start">
           <ProfileCircle />
 
           <motion.p
@@ -285,7 +285,7 @@ export default function Home() {
             Welcome to my personal website! :)
           </motion.p>
 
-          <ContentSquare />
+            <ContentSquare />
         </main>
       </div>
 
