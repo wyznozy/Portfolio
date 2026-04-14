@@ -1,7 +1,9 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  output: "export",
+  basePath: "https://wyznozy.github.io/Portfolio/", // your exact repo name on GitHub
+  images: { unoptimized: true },
 };
 
 export default nextConfig;
