@@ -14,7 +14,7 @@ function ProfileCircle() {
       transition={{ type: "spring", stiffness: 60, damping: 18, restSpeed: 0.5, restDelta: 0.01, delay: 0.1 }}
     >
       <div className="w-75 h-75 rounded-full overflow-hidden shadow-xl ring-4 ring-white dark:ring-zinc-800">
-        <Image src="/profile.jpg" alt="Profile" width={300} height={300} className="object-cover w-full h-full" />
+        <Image src="/Portfolio/profile.jpg" alt="Profile" width={300} height={300} className="object-cover w-full h-full" />
       </div>
       <div className="flex flex-col items-center mt-1">
         <h1 className="text-4xl font-bold tracking-tight text-black dark:text-white">Michael Chau</h1>
