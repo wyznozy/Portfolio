@@ -1,55 +1,15 @@
 "use client";
 
-import Image from "next/image";
-import { useRouter } from "next/navigation"
-import { motion, useScroll } from "framer-motion"
+import { motion, useScroll, useMotionValueEvent  } from "framer-motion"
 import { useState } from "react"
+import { ProfileCircle } from "./components/ProfileCircle";
+import { SocialsSection } from "./components/SocialsSection";
 
-function ProfileCircle() {
-  return (
-    <motion.div
-      className="flex flex-col items-center gap-5"
-      initial={{ y: "-100vh", opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ type: "spring", stiffness: 60, damping: 18, restSpeed: 0.5, restDelta: 0.01, delay: 0.1 }}
-    >
-      <div className="w-75 h-75 rounded-full overflow-hidden shadow-xl ring-4 ring-white dark:ring-zinc-800">
-        <Image src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/profile.jpg`} alt="Profile" width={300} height={300} className="object-cover w-full h-full" />
-      </div>
-      <div className="flex flex-col items-center mt-1">
-        <h1 className="text-4xl font-bold tracking-tight text-black dark:text-white">Michael Chau</h1>
-        <h2 className="text-3xl">Full Stack Software Engineer</h2>
-      </div>
-    </motion.div>
-  );
-}
-
-function ContentSquare() {
-  return (
-    <motion.div
-      className="flex w-75 mt-auto flex-col items-center gap-4"
-      initial={{ y: "100vh", opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ type: "spring", stiffness: 60, damping: 18, restSpeed: 0.5, restDelta: 0.01, delay: 0.1 }}
-    >
-      <div className="flex flex-row w-full items-center justify-between text-center">
-
-        <a className="inline-flex" href="https://www.linkedin.com/in/michaelanhchau/" target="_blank" rel="noopener noreferrer">
-          <Image src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/linkedin.png`} alt="LinkedIn" width={40} height={40} className="object-contain w-12 h-12" />
-        </a>
-
-        <a  className="inline-flex" href="https://github.com/wyznozy" target="_blank" rel="noopener noreferrer">
-          <Image src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/github.png`} alt="GitHub" width={40} height={40} className="object-contain w-12 h-12" />
-        </a>
-      </div>
-    </motion.div>
-  );
-}
 
 const navItems = [
-  { number: "01", label: "ABOUT ME" },
-  { number: "02", label: "PHOTOS" },
-  { number: "03", label: "CONTACT" },
+  { label: "ABOUT ME" , key: "AboutMeSection"},
+  { label: "EXPERIENCE", key: "ExperienceSection" },
+  { label: "SANDBOX", key: "SandboxSection" },
 ]
 
 function NavMenu() {
@@ -64,14 +24,13 @@ function NavMenu() {
           animate={{ opacity: hovered === null || hovered === item.label ? 1 : 0.3 }}
           transition={{ duration: 0.2 }}
           className="flex items-center gap-4 cursor-pointer overflow-hidden py-1"
-        >
+          onClick={()=> document.getElementById(item.key)?.scrollIntoView({ behavior: "smooth"})}>
           <div className="overflow-hidden">
             <motion.span
               className="block text-4xl font-bold text-black dark:text-white tracking-tight"
               initial={{ y: 0 }}
               whileHover={{ y: -4 }}
-              transition={{ type: "spring", stiffness: 300, damping: 20 }}
-            >
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}>
               {item.label}
             </motion.span>
           </div>
@@ -81,23 +40,27 @@ function NavMenu() {
   )
 }
 
+
+
 export default function Home() {
-  const router = useRouter();
+  // const router = useRouter();
   const { scrollYProgress } = useScroll();
 
-  function homeBtnClicked() {
-    router.push("/mynextpage");
-  }
+  useMotionValueEvent(scrollYProgress, "change", (value) => {
+      console.log(value) // now you get 0, 0.1, 0.5 etc.
+  })
 
   return (
     <>
+      
+      
       <div className="fixed left-25 top-0 h-screen flex items-center pl-8 z-50">
         <NavMenu />
       </div>
 
       
       <div className="flex flex-col items-center bg-zinc-50 font-sans dark:bg-black">
-        <main className="flex w-full min-h-screen mx-auto flex-col items-center gap-8 py-32 px-16 bg-white dark:bg-black ">
+        <main id="AboutMeSection" className="flex w-full min-h-screen mx-auto flex-col items-center gap-8 py-32 px-16 bg-white dark:bg-black ">
           <ProfileCircle />
 
           <motion.p
@@ -110,14 +73,17 @@ export default function Home() {
             Welcome to my personal website! :)
           </motion.p>
 
-            <ContentSquare />
+          <SocialsSection />
+        
         </main>
       </div>
 
-
-      <div className="flex flex-col min-h-screen items-center bg-zinc-50 font-sans dark:bg-blue-950">
+      <div id="ExperienceSection" className="flex flex-col min-h-screen items-center bg-zinc-50 font-sans dark:bg-blue-950">
       </div>
       
+      
+      <div id="SandboxSection" className="flex flex-col min-h-screen items-center bg-zinc-50 font-sans dark:bg-green-900">
+      </div>
     </>
   );
 }
