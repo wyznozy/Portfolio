@@ -18,14 +18,33 @@ export default function Home() {
           <ProfileCircle />
 
           <motion.p
-            className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400"
+            className="max-w-xl text-lg leading-8 text-zinc-600 dark:text-zinc-400"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            transition={{ duration: 3 }}
+            transition={{ duration: 3, delay: .5 }}
           >
-            Welcome to my personal website! :)
+            
+          I&apos;m a developer who was originally captivated by games and learned to apply that passion and competitiveness to my professional career. Having seen
+          my applications used in real world environments and make people&apos;s lives easier and safer, has only driven my motivation further. I hope to make a positive impact on wherever I go and 
+          am excited for what the future holds!
           </motion.p>
+
+
+
+
+          <motion.p
+            className="max-w-xl text-lg leading-8 text-zinc-600 dark:text-zinc-400 mt-16"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 3, delay: 1.5 }}
+          >
+            
+          Look forward to meeting you :)
+
+          </motion.p>
+
 
         </main>
       </div>
