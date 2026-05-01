@@ -110,12 +110,12 @@ const experiences: TimelineItemProps[] = [
     description: "Focus on soft skills alongside system design.",
     bullets: [
       "Architected and implemented Digital Boarding Pass distribution for Android and iOS, including the end-to-end pipeline for pass generation and updates on both platforms.",
-      "Created and deployed multiple security related applications to airports utilizing biometric recognition for secure vetting.",
-      "Developed more Peripheral Control Manager (PCM) applications and Certified with SITA.",
       "Lead team to successfully convert Xamarin based project to a new MAUI project and transition appropriate customers.",
+      "Updated API authentication to utilize encoding/decoding JWT tokens",
+      "Created and deployed multiple security related applications to airports utilizing biometric recognition for secure vetting.",
       "Integrated Swagger into legacy .NET APIs + autogenerating clients on appropriate applications.",
     ],
-    tags: ["MAUI", "Azure Devops", "VMware"],
+    tags: ["MAUI", "ASP.NET", "Azure Devops", "VMware", "Postman"],
     active: true,
   },
   {
@@ -128,9 +128,9 @@ const experiences: TimelineItemProps[] = [
       "Developed a Report Generator application utilized internally to autonomously email scheduled reports to all customers.",
       "Helped transition team off of Team Foundation Studio (TFS) and onto .git workflow.",
       "Supported bugfixing and feature requests for Airline Choice Mobile.",
-      "Developed and Certified with Materna an application for transmitting printer/scanner data to Airline Choice DCS via Citrix."
+      "Developed and Certified with SITA an application for transmitting printer/scanner data to Airline Choice DCS via Citrix."
     ],
-    tags: ["Winforms", "C#", "ASP.NET", "SQL", "Xamarin", "Cron"],
+    tags: ["Winforms", "C#", "SQL", "Xamarin", "Cron"],
   },
 ];
 
